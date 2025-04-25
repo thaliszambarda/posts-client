@@ -12,7 +12,7 @@ export function Error() {
           href="/"
           className="mt-8 inline-block rounded-md bg-white px-6 py-3 font-semibold text-red-500 transition hover:bg-gray-100"
         >
-          Voltar para Home
+          Voltar para Tela inicial
         </a>
       </div>
     </div>
