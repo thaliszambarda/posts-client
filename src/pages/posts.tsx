@@ -1,3 +1,4 @@
+import { LogOut } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +9,7 @@ import { useUser } from "@/contexts/user.context";
 
 export default function PostsPage() {
   const navigate = useNavigate();
-  const { user } = useUser();
+  const { user, setUser } = useUser();
   const [sortBy, setSortBy] = useState<"created_datetime" | "title">(
     "created_datetime"
   );
@@ -20,8 +21,15 @@ export default function PostsPage() {
 
   return (
     <div className="flex min-h-screen w-full max-w-[800px] flex-col gap-6 bg-white pb-6">
-      <header className="w-full bg-[#7695EC] px-8 py-7">
+      <header className="flex w-full items-center justify-between bg-[#7695EC] px-8 py-7">
         <h1 className="text-2xl font-bold text-white">CodeLeap Network</h1>
+        <div className="flex gap-x-4">
+          <span className="font-bold text-white">{user?.name}</span>
+          <LogOut
+            className="cursor-pointer text-white"
+            onClick={() => setUser(null)}
+          />
+        </div>
       </header>
 
       <div className="flex flex-col gap-6 px-6">
