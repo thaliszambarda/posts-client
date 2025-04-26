@@ -41,7 +41,9 @@ export function PostCard({ post }: Props) {
             })}
           </span>
         </div>
-        <p className="text-base whitespace-pre-wrap">{post.content}</p>
+        <p className="text-base break-words whitespace-pre-wrap">
+          {post.content}
+        </p>
       </CardContent>
     </Card>
   );
