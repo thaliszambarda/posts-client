@@ -68,7 +68,12 @@ export function PostForm({ sortBy, sortOrder }: Props) {
       <form onSubmit={handleSubmit} className="flex flex-col gap-2">
         <fieldset className="flex flex-col gap-2">
           <label htmlFor="post-title">Title</label>
-          <Input id="post-title" ref={titleRef} onChange={handleChange} />
+          <Input
+            maxLength={50}
+            id="post-title"
+            ref={titleRef}
+            onChange={handleChange}
+          />
         </fieldset>
 
         <fieldset className="flex flex-col gap-2">

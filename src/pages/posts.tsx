@@ -21,12 +21,14 @@ export default function PostsPage() {
 
   return (
     <div className="flex min-h-screen w-full max-w-[800px] flex-col gap-6 bg-white pb-6">
-      <header className="flex w-full items-center justify-between bg-[#7695EC] px-8 py-7">
+      <header className="flex w-full items-center justify-between gap-x-4 bg-[#7695EC] px-8 py-7">
         <h1 className="text-2xl font-bold text-white">CodeLeap Network</h1>
-        <div className="flex gap-x-4">
-          <span className="font-bold text-white">{user?.name}</span>
+        <div className="flex items-center justify-center gap-x-2 gap-y-2">
+          <span className="max-w-[9rem] overflow-hidden font-bold text-ellipsis whitespace-nowrap text-white">
+            {user?.name}
+          </span>
           <LogOut
-            className="cursor-pointer text-white"
+            className="size-6 cursor-pointer text-white"
             onClick={() => setUser(null)}
           />
         </div>

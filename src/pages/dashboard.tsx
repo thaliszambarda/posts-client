@@ -33,6 +33,7 @@ export default function Dashboard() {
         </label>
         <Input
           id="username"
+          maxLength={25}
           placeholder="John doe"
           ref={inputRef}
           onChange={(e) => setIsEmpty(e.target.value === "")}

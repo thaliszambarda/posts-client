@@ -17,8 +17,10 @@ export function PostCard({ post }: Props) {
 
   return (
     <Card className="p-0">
-      <CardHeader className="flex flex-row items-center justify-between bg-[#7695EC] p-4">
-        <h2 className="text-xl font-bold text-white">{post.title}</h2>
+      <CardHeader className="flex flex-row items-center gap-2 bg-[#7695EC] p-4 sm:justify-between">
+        <h2 className="max-w-sm text-xl font-bold break-all text-white">
+          {post.title}
+        </h2>
         {isAuthor && (
           <div className="flex gap-4">
             <Trash
@@ -33,8 +35,8 @@ export function PostCard({ post }: Props) {
         )}
       </CardHeader>
       <CardContent className="p-4">
-        <div className="mb-2 flex justify-between text-sm text-gray-500">
-          <span className="font-bold">@{post.username}</span>
+        <div className="mb-2 flex justify-between gap-x-4 text-sm text-gray-500">
+          <span className="max-w-xs font-bold break-all">@{post.username}</span>
           <span>
             {formatDistanceToNow(new Date(post.created_datetime), {
               addSuffix: true,
