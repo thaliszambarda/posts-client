@@ -2,8 +2,9 @@ import { type FormEvent, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { useUser } from "@/providers/user.provider";
+import { useUser } from "@/contexts/user.context";
 
 export default function Dashboard() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -24,7 +25,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="flex w-full max-w-[500px] flex-col gap-2 rounded-2xl border border-[#CCC] bg-white p-6">
+    <Card className="max-w-[800px]">
       <h1 className="text-2xl font-bold">Welcome to CodeLeap network!</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-2">
         <label htmlFor="username" className="text-base font-normal">
@@ -36,14 +37,10 @@ export default function Dashboard() {
           ref={inputRef}
           onChange={(e) => setIsEmpty(e.target.value === "")}
         />
-        <Button
-          className="mt-2 self-end rounded-lg px-8 py-1.5 text-base font-bold"
-          type="submit"
-          disabled={isEmpty}
-        >
+        <Button className="mt-2 self-end" type="submit" disabled={isEmpty}>
           ENTER
         </Button>
       </form>
-    </div>
+    </Card>
   );
 }
