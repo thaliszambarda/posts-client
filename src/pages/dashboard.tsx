@@ -25,7 +25,7 @@ export default function Dashboard() {
   };
 
   return (
-    <Card className="max-w-[800px]">
+    <Card className="max-w-[500px]">
       <h1 className="text-2xl font-bold">Welcome to CodeLeap network!</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-2">
         <label htmlFor="username" className="text-base font-normal">

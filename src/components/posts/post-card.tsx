@@ -22,11 +22,11 @@ export function PostCard({ post }: Props) {
         {isAuthor && (
           <div className="flex gap-4">
             <Trash
-              className="cursor-pointer text-white"
+              className="cursor-pointer text-white transition-all duration-300 hover:scale-110 hover:text-red-500"
               onClick={() => openModal("deletePost", { postId: post.id })}
             />
             <Edit
-              className="mt-[0.05rem] cursor-pointer text-white"
+              className="mt-[0.05rem] cursor-pointer text-white transition-all duration-300 hover:scale-110 hover:text-emerald-500"
               onClick={() => openModal("editPost", { post })}
             />
           </div>
